@@ -1,5 +1,5 @@
 import {Player} from '@lottiefiles/react-lottie-player'
-import NOTJSON from '../assets/lottie/codes/404.json'
+import NOTJSON from '../assets/404.json'
 import { useNavigate } from 'react-router-dom'
 export default function NotFound() {
     const navigate = useNavigate()
