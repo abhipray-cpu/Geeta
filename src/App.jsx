@@ -2,7 +2,8 @@ import { RouterProvider,createBrowserRouter } from "react-router-dom";
 
 import Landing,{loader as landingLoader} from './pages/Landing'
 import Chapter from './pages/Chapter'
-import Shlok from './pages/Shlok'
+import Shlok,{loader as shlokLoader} from './pages/Shlok'
+import NotFound from './pages/NotFound'
 
 const router = createBrowserRouter(
     [
@@ -18,10 +19,15 @@ const router = createBrowserRouter(
             element:<Chapter></Chapter>,
             id:'chapter',
         },{
-            path:'/sholk/:sholk',
+            path:'/shlok/:chapter/:shlok',
             element:<Shlok></Shlok>,
+            loader:shlokLoader,
             id:"shlok"
-        }
+        },
+        {
+    path: "*",
+    element: <NotFound></NotFound>,
+  },
     ]
 )
 function App(){
